@@ -1,42 +1,45 @@
 var express = require('express');
-var isAuthenticated = require('../user_repo/passportUtils').isAuthenticated;
+var players = require('../user_repo/dao/players');
 var router = express.Router();
 
 module.exports = function(passport) {
 
-    // TODO: for testing, remove when going live
-    router.get('/', function(req, res, next) {
-        res.send('respond with a resource');
+    /**
+     * User Registration.
+     */
+    router.post('/signup', passport.authenticate('signup'), function(req, res) {
+        res.send();
     });
 
     /**
-     *  User Registration.
+     * Gets users friend list
      */
-    router.post('/signup', passport.authenticate('signup', {
-        // TODO: refactor using redirects
-        successRedirect: '/login',
-        failureRedirect: '/signup',
-        failureFlash : true
-    }));
+    router.get('/users/:username/friends', function(req, res) {
+        players.getFriends(req.params.username, function(err, friends) {
+            if (err) next(err);
+            else res.send(friends);
+        })
+    });
 
     /**
-     *  User login.
+     * Add friend
      */
-    router.post('/login', passport.authenticate('login', {
-        // TODO: refactor using redirects
-        successRedirect: '/home',
-        failureRedirect: '/',
-        failureFlash : true
-    }));
+    router.post('/users/:username/friends', function(req, res) {
+        players.addToFriends(req.params.username, req.body.friend, function(err) {
+            if (err) next(err);
+            else res.send();
+        })
+    });
 
     /**
      * Rank player
      */
-    // TODO: Rank player Endpoint
-
-    // TODO: Add player Endpoint
-
-    // TODO: Push notifications Endpoints
+    router.put('/users/:username/', function(req, res, next) {
+        players.rankPlayer(req.params.username, req.body.rank, function(err) {
+            if (err) next(err);
+            else res.send();
+        })
+    });
 
     return router;
 };

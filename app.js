@@ -2,11 +2,18 @@ var express = require('express');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var passport = require('passport');
+var dbConfig = require('./user_repo/db');
+var mongoose = require('mongoose');
+mongoose.connect(dbConfig.url);
 
-var routes = require('./routes/index');
+var passport = require('passport');
+var expressSession = require('express-session');
 
 var app = express();
+
+app.use(expressSession({secret: 'rromano'}));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // uncomment after placing your favicon in /public
 app.use(logger('dev'));
@@ -15,10 +22,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Initialize Passport
-var initPassport = require('./user_repo/passport/init');
+var initPassport = require('./user_repo/authentication/init');
 initPassport(passport);
 
-app.use('/', routes)(passport);
+var routes = require('./routes/index')(passport);
+app.use('/', routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
