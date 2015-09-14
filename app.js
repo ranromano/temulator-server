@@ -4,6 +4,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var dbConfig = require('./user_repo/db');
 var mongoose = require('mongoose');
+var cors = require('cors');
 mongoose.connect(dbConfig.url);
 
 var passport = require('passport');
@@ -14,6 +15,7 @@ var app = express();
 app.use(expressSession({secret: 'rromano'}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(cors());
 
 // uncomment after placing your favicon in /public
 app.use(logger('dev'));
