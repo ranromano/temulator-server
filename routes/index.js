@@ -14,7 +14,7 @@ module.exports = function(passport) {
     /**
      * Gets users friend list
      */
-    router.get('/users/:username/friends', function(req, res) {
+    router.get('/users/:username/friends', function(req, res, next) {
         players.getFriends(req.params.username, function(err, friends) {
             if (err) next(err);
             else res.send(friends);
@@ -24,11 +24,22 @@ module.exports = function(passport) {
     /**
      * Add friend
      */
-    router.post('/users/:username/friends', function(req, res) {
+    router.post('/users/:username/friends', function(req, res, next) {
         players.addToFriends(req.params.username, req.body.friend, function(err) {
             if (err) next(err);
             else res.send();
         })
+    });
+
+
+    /**
+     * Delete friend
+     */
+    router.delete('/users/:username/friends', function(req, res, next) {
+        players.deleteFriend(req.params.username, req.body.friend, function(err) {
+            if (err) next(err);
+            else res.send();
+        });
     });
 
     /**
@@ -39,6 +50,16 @@ module.exports = function(passport) {
             if (err) next(err);
             else res.send();
         })
+    });
+
+    /**
+     * Get Rank by Username
+     */
+    router.get('/users/:username/rank', function(req, res, next) {
+        players.getRank(req.params.username, function(err, rank) {
+            if (err) next(err);
+            else res.send({ rank : rank });
+        });
     });
 
     return router;
