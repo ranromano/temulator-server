@@ -27,12 +27,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors());
 
-// uncomment after placing your favicon in /public
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public/www')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Initialize Passport
 var initPassport = require('./user_repo/authentication/init');

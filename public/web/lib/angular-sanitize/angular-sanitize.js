@@ -69,7 +69,7 @@ var $sanitizeMinErr = angular.$$minErr('$sanitize');
  *
  * @example
    <example module="sanitizeExample" deps="angular-sanitize.js">
-   <file name="index.html">
+   <file name="main.html">
      <script>
          angular.module('sanitizeExample', ['ngSanitize'])
            .controller('ExampleController', ['$scope', '$sce', function($scope, $sce) {
@@ -549,7 +549,7 @@ angular.module('ngSanitize', []).provider('$sanitize', $SanitizeProvider);
  *
  * @example
    <example module="linkyExample" deps="angular-sanitize.js">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('linkyExample', ['ngSanitize'])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -644,7 +644,7 @@ angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
     while ((match = raw.match(LINKY_URL_REGEXP))) {
       // We can not end in these as they are sometimes found at the end of the sentence
       url = match[0];
-      // if we did not match ftp/http/www/mailto then assume mailto
+      // if we did not match ftp/http/web/mailto then assume mailto
       if (!match[2] && !match[4]) {
         url = (match[3] ? 'http://' : 'mailto:') + url;
       }

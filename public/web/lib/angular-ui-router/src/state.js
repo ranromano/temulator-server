@@ -1266,7 +1266,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      * - **`inherit`** - {boolean=true}, If `true` will inherit url parameters from current url.
      * - **`relative`** - {object=$state.$current}, When transitioning with relative path (e.g '^'), 
      *    defines which state to be relative from.
-     * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://www.example.com/fullurl".
+     * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://web.example.com/fullurl".
      * 
      * @returns {string} compiled state url
      */

@@ -7532,7 +7532,7 @@ ionic.scroll = {
     self.el = self.item = opts.el;
     self.scrollEl = opts.scrollEl;
     self.scrollView = opts.scrollView;
-    // Get the True Top of the list el http://www.quirksmode.org/js/findpos.html
+    // Get the True Top of the list el http://web.quirksmode.org/js/findpos.html
     self.listElTrueTop = 0;
     if (self.listEl.offsetParent) {
       var obj = self.listEl;

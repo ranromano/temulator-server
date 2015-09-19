@@ -377,7 +377,7 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
        * @param {object=} params An object of parameter values to fill the matcher's required parameters.
        * @param {object=} options Options object. The options are:
        *
-       * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://www.example.com/fullurl".
+       * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://web.example.com/fullurl".
        *
        * @returns {string} Returns the fully compiled URL, or `null` if `params` fail validation against `urlMatcher`
        */

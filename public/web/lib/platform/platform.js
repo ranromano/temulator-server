@@ -301,7 +301,7 @@
 
     /**
      * Detect Opera browser (Presto-based)
-     * http://www.howtocreate.co.uk/operaStuff/operaObject.html
+     * http://web.howtocreate.co.uk/operaStuff/operaObject.html
      * http://dev.opera.com/articles/view/opera-mini-web-content-authoring-guidelines/#operamini
      */
     var opera = context.operamini || context.opera;
@@ -816,7 +816,7 @@
       version = null;
     }
     // detect Opera identifying/masking itself as another browser
-    // http://www.opera.com/support/kb/view/843/
+    // http://web.opera.com/support/kb/view/843/
     else if (this != forOwn && (
           product != 'Wii' && (
             (useFeatures && opera) ||

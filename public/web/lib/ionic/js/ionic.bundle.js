@@ -7539,7 +7539,7 @@ ionic.scroll = {
     self.el = self.item = opts.el;
     self.scrollEl = opts.scrollEl;
     self.scrollView = opts.scrollView;
-    // Get the True Top of the list el http://www.quirksmode.org/js/findpos.html
+    // Get the True Top of the list el http://web.quirksmode.org/js/findpos.html
     self.listElTrueTop = 0;
     if (self.listEl.offsetParent) {
       var obj = self.listEl;
@@ -9126,7 +9126,7 @@ function isArrayLike(obj) {
  * using the `hasOwnProperty` method.
  *
  * Unlike ES262's
- * [Array.prototype.forEach](http://www.ecma-international.org/ecma-262/5.1/#sec-15.4.4.18),
+ * [Array.prototype.forEach](http://web.ecma-international.org/ecma-262/5.1/#sec-15.4.4.18),
  * Providing 'undefined' or 'null' values for `obj` will not throw a TypeError, but rather just
  * return the value provided.
  *
@@ -9653,7 +9653,7 @@ function arrayRemove(array, value) {
  *
  * @example
  <example module="copyExample">
- <file name="index.html">
+ <file name="main.html">
  <div ng-controller="ExampleController">
  <form novalidate class="simple-form">
  Name: <input type="text" ng-model="user.name" /><br />
@@ -10166,7 +10166,7 @@ function toKeyValue(obj) {
 
 /**
  * We need our custom method because encodeURIComponent is too aggressive and doesn't follow
- * http://www.ietf.org/rfc/rfc3986.txt with regards to the character set (pchar) allowed in path
+ * http://web.ietf.org/rfc/rfc3986.txt with regards to the character set (pchar) allowed in path
  * segments:
  *    segment       = *pchar
  *    pchar         = unreserved / pct-encoded / sub-delims / ":" / "@"
@@ -10254,7 +10254,7 @@ function getNgAttribute(element, ngAttr) {
  * `ngApp` is the easiest, and most common way to bootstrap an application.
  *
  <example module="ngAppDemo">
-   <file name="index.html">
+   <file name="main.html">
    <div ng-controller="ngAppDemoController">
      I can add: {{a}} + {{b}} =  {{ a+b }}
    </div>
@@ -10270,7 +10270,7 @@ function getNgAttribute(element, ngAttr) {
  * Using `ngStrictDi`, you would see something like this:
  *
  <example ng-app-included="true">
-   <file name="index.html">
+   <file name="main.html">
    <div ng-app="ngAppStrictDemo" ng-strict-di>
        <div ng-controller="GoodController1">
            I can add: {{a}} + {{b}} =  {{ a+b }}
@@ -12144,7 +12144,7 @@ forEach({
         if (type === 'mouseenter' || type === 'mouseleave') {
           // Refer to jQuery's implementation of mouseenter & mouseleave
           // Read about mouseenter and mouseleave:
-          // http://www.quirksmode.org/js/events_mouse.html#link8
+          // http://web.quirksmode.org/js/events_mouse.html#link8
 
           jqLiteOn(element, MOUSE_EVENT_MAP[type], function(event) {
             var target = this, related = event.relatedTarget;
@@ -13376,7 +13376,7 @@ function $AnchorScrollProvider() {
    *
    * @example
      <example module="anchorScrollExample">
-       <file name="index.html">
+       <file name="main.html">
          <div id="scrollArea" ng-controller="ScrollController">
            <a ng-click="gotoBottom()">Go to bottom</a>
            <a id="bottom"></a> You're at the bottom!
@@ -13415,7 +13415,7 @@ function $AnchorScrollProvider() {
    *
    * @example
      <example module="anchorScrollOffsetExample">
-       <file name="index.html">
+       <file name="main.html">
          <div class="fixed-header" ng-controller="headerCtrl">
            <a href="" ng-click="gotoAnchor(x)" ng-repeat="x in [1,2,3,4,5]">
              Go to anchor {{x}}
@@ -14566,7 +14566,7 @@ function $BrowserProvider() {
  *
  * @example
    <example module="cacheExampleApp">
-     <file name="index.html">
+     <file name="main.html">
        <div ng-controller="CacheController">
          <input ng-model="newCacheKey" placeholder="Key">
          <input ng-model="newCacheValue" placeholder="Value">
@@ -15516,7 +15516,7 @@ function $TemplateCacheProvider() {
  * </div>
  *
  <example module="compileExample">
-   <file name="index.html">
+   <file name="main.html">
     <script>
       angular.module('compileExample', [], function($compileProvider) {
         // configure new 'compile' directive by passing a directive
@@ -17869,7 +17869,7 @@ function $ControllerProvider() {
  *
  * @example
    <example module="documentExample">
-     <file name="index.html">
+     <file name="main.html">
        <div ng-controller="ExampleController">
          <p>$document title: <b ng-bind="title"></b></p>
          <p>window.document title: <b ng-bind="windowTitle"></b></p>
@@ -18028,7 +18028,7 @@ function $HttpParamSerializerJQLikeProvider() {
    *     method: 'POST',
    *     data: $httpParamSerializerJQLike(myData),
    *     headers: {
-   *       'Content-Type': 'application/x-www-form-urlencoded'
+   *       'Content-Type': 'application/x-web-form-urlencoded'
    *     }
    *   });
    *
@@ -18747,7 +18747,7 @@ function $HttpProvider() {
      *
      * @example
 <example module="httpExample">
-<file name="index.html">
+<file name="main.html">
   <div ng-controller="FetchController">
     <select ng-model="method" aria-label="Request method">
       <option>GET</option>
@@ -19424,7 +19424,7 @@ $interpolateMinErr.interr = function(text, err) {
  *
  * @example
 <example module="customInterpolationApp">
-<file name="index.html">
+<file name="main.html">
 <script>
   var customInterpolationApp = angular.module('customInterpolationApp', []);
 
@@ -19587,7 +19587,7 @@ function $InterpolateProvider() {
      * when otherwise untrusted data is used by a directive.
      *
      * <example>
-     *  <file name="index.html">
+     *  <file name="main.html">
      *    <div ng-init="username='A user'">
      *      <p ng-init="apptitle='Escaping demo'">{{apptitle}}: \{\{ username = "defaced value"; \}\}
      *        </p>
@@ -19795,7 +19795,7 @@ function $IntervalProvider() {
       *
       * @example
       * <example module="intervalExample">
-      * <file name="index.html">
+      * <file name="main.html">
       *   <script>
       *     angular.module('intervalExample', [])
       *       .controller('ExampleController', ['$scope', '$interval',
@@ -20368,7 +20368,7 @@ var locationPrototype = {
    * This method is getter only.
    *
    * Return full url representation with all segments encoded according to rules specified in
-   * [RFC 3986](http://www.ietf.org/rfc/rfc3986.txt).
+   * [RFC 3986](http://web.ietf.org/rfc/rfc3986.txt).
    *
    *
    * ```js
@@ -21027,7 +21027,7 @@ function $LocationProvider() {
            $scope.message = 'Hello World!';
          }]);
      </file>
-     <file name="index.html">
+     <file name="main.html">
        <div ng-controller="LogController">
          <p>Reload this page with open console, enter text and hit the log button...</p>
          <label>Message:
@@ -23219,7 +23219,7 @@ function $ParseProvider() {
  *   This method *returns a new promise* which is resolved or rejected via the return value of the
  *   `successCallback`, `errorCallback` (unless that value is a promise, in which case it is resolved
  *   with the value which is resolved in that promise using
- *   [promise chaining](http://www.html5rocks.com/en/tutorials/es6/promises/#toc-promises-queues)).
+ *   [promise chaining](http://web.html5rocks.com/en/tutorials/es6/promises/#toc-promises-queues)).
  *   It also notifies via the return value of the `notifyCallback` method. The promise cannot be
  *   resolved or rejected from the notifyCallback method.
  *
@@ -25637,7 +25637,7 @@ function $SceDelegateProvider() {
  * *Please note*:
  * The browser's
  * [Same Origin Policy](https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_XMLHttpRequest)
- * and [Cross-Origin Resource Sharing (CORS)](http://www.w3.org/TR/cors/)
+ * and [Cross-Origin Resource Sharing (CORS)](http://web.w3.org/TR/cors/)
  * policy apply in addition to this and may further restrict whether the template is successfully
  * loaded.  This means that without the right CORS policy, loading templates from a different domain
  * won't work on all browsers.  Also, loading templates from `file://` URL does not work on some
@@ -25715,7 +25715,7 @@ function $SceDelegateProvider() {
  *      one level of escaping depending on your templating engine and the way you interpolated
  *      the value.)  Do make use of your platform's escaping mechanism as it might be good
  *      enough before coding your own.  e.g. Ruby has
- *      [Regexp.escape(str)](http://www.ruby-doc.org/core-2.0.0/Regexp.html#method-c-escape)
+ *      [Regexp.escape(str)](http://web.ruby-doc.org/core-2.0.0/Regexp.html#method-c-escape)
  *      and Python has [re.escape](http://docs.python.org/library/re.html#re.escape).
  *      Javascript lacks a similar built in function for escaping.  Take a look at Google
  *      Closure library's [goog.string.regExpEscape(s)](
@@ -25726,7 +25726,7 @@ function $SceDelegateProvider() {
  * ## Show me an example using SCE.
  *
  * <example module="mySceApp" deps="angular-sanitize.js">
- * <file name="index.html">
+ * <file name="main.html">
  *   <div ng-controller="AppController as myCtrl">
  *     <i ng-bind-html="myCtrl.explicitlyTrustedHtml" id="explicitlyTrustedHtml"></i><br><br>
  *     <b>User comments</b><br>
@@ -26598,7 +26598,7 @@ var originUrl = urlResolve(window.location.href);
  * Parsing means that the anchor node's host, hostname, protocol, port, pathname and related
  * properties are all populated to reflect the normalized URL.  This approach has wide
  * compatibility - Safari 1+, Mozilla 1+, Opera 7+,e etc.  See
- * http://www.aptana.com/reference/html/api/HTMLAnchorElement.html
+ * http://web.aptana.com/reference/html/api/HTMLAnchorElement.html
  *
  * Implementation Notes for IE
  * ---------------------------
@@ -26618,7 +26618,7 @@ var originUrl = urlResolve(window.location.href);
  *
  * References:
  *   http://developer.mozilla.org/en-US/docs/Web/API/HTMLAnchorElement
- *   http://www.aptana.com/reference/html/api/HTMLAnchorElement.html
+ *   http://web.aptana.com/reference/html/api/HTMLAnchorElement.html
  *   http://url.spec.whatwg.org/#urlutils
  *   https://github.com/angular/angular.js/pull/2902
  *   http://james.padolsey.com/javascript/parsing-urls-with-the-dom/
@@ -26697,7 +26697,7 @@ function urlIsSameOrigin(requestUrl) {
  *
  * @example
    <example module="windowExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('windowExample', [])
            .controller('ExampleController', ['$scope', '$window', function($scope, $window) {
@@ -26863,7 +26863,7 @@ function $$CookieReaderProvider() {
  * @return {Function} the filter function
  * @example
    <example name="$filter" module="filterExample">
-     <file name="index.html">
+     <file name="main.html">
        <div ng-controller="MainCtrl">
         <h3>{{ originalText }}</h3>
         <h3>{{ filteredText }}</h3>
@@ -27003,7 +27003,7 @@ function $FilterProvider($provide) {
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
        <div ng-init="friends = [{name:'John', phone:'555-1276'},
                                 {name:'Mary', phone:'800-BIG-MARY'},
                                 {name:'Mike', phone:'555-4321'},
@@ -27214,7 +27214,7 @@ function getTypeForFilter(val) {
  *
  * @example
    <example module="currencyExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('currencyExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -27290,7 +27290,7 @@ function currencyFilter($locale) {
  *
  * @example
    <example module="numberFilterExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('numberFilterExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -27613,7 +27613,7 @@ var DATE_FORMATS_SPLIT = /((?:[^yMdHhmsaZEwG']+)|(?:'(?:[^']|'')*')|(?:E+|y+|M+|
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
        <span ng-non-bindable>{{1288323623006 | date:'medium'}}</span>:
            <span>{{1288323623006 | date:'medium'}}</span><br>
        <span ng-non-bindable>{{1288323623006 | date:'yyyy-MM-dd HH:mm:ss Z'}}</span>:
@@ -27732,7 +27732,7 @@ function dateFilter($locale) {
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
        <pre id="default-spacing">{{ {'name':'value'} | json }}</pre>
        <pre id="custom-spacing">{{ {'name':'value'} | json:4 }}</pre>
      </file>
@@ -27800,7 +27800,7 @@ var uppercaseFilter = valueFn(uppercase);
  *
  * @example
    <example module="limitToExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('limitToExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -27941,7 +27941,7 @@ function limitToFilter() {
  * by age in descending order (predicate is set to `'-age'`).
  * `reverse` is not set, which means it defaults to `false`.
    <example module="orderByExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('orderByExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -27974,7 +27974,7 @@ function limitToFilter() {
  * as shown in the next example.
  * @example
    <example module="orderByExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('orderByExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -28037,7 +28037,7 @@ function limitToFilter() {
  *
  * @example
   <example module="orderByExample">
-    <file name="index.html">
+    <file name="main.html">
       <div ng-controller="ExampleController">
         <table class="friend">
           <tr>
@@ -28250,12 +28250,12 @@ var htmlAnchorDirective = valueFn({
  *
  * The wrong way to write it:
  * ```html
- * <a href="http://www.gravatar.com/avatar/{{hash}}">link1</a>
+ * <a href="http://web.gravatar.com/avatar/{{hash}}">link1</a>
  * ```
  *
  * The correct way to write it:
  * ```html
- * <a ng-href="http://www.gravatar.com/avatar/{{hash}}">link1</a>
+ * <a ng-href="http://web.gravatar.com/avatar/{{hash}}">link1</a>
  * ```
  *
  * @element A
@@ -28265,7 +28265,7 @@ var htmlAnchorDirective = valueFn({
  * This example shows various combinations of `href`, `ng-href` and `ng-click` attributes
  * in links and their different behaviors:
     <example>
-      <file name="index.html">
+      <file name="main.html">
         <input ng-model="value" /><br />
         <a id="link-1" href ng-click="value = 1">link 1</a> (link, don't reload)<br />
         <a id="link-2" href="" ng-click="value = 2">link 2</a> (link, don't reload)<br />
@@ -28347,12 +28347,12 @@ var htmlAnchorDirective = valueFn({
  *
  * The buggy way to write it:
  * ```html
- * <img src="http://www.gravatar.com/avatar/{{hash}}" alt="Description"/>
+ * <img src="http://web.gravatar.com/avatar/{{hash}}" alt="Description"/>
  * ```
  *
  * The correct way to write it:
  * ```html
- * <img ng-src="http://www.gravatar.com/avatar/{{hash}}" alt="Description" />
+ * <img ng-src="http://web.gravatar.com/avatar/{{hash}}" alt="Description" />
  * ```
  *
  * @element IMG
@@ -28373,12 +28373,12 @@ var htmlAnchorDirective = valueFn({
  *
  * The buggy way to write it:
  * ```html
- * <img srcset="http://www.gravatar.com/avatar/{{hash}} 2x" alt="Description"/>
+ * <img srcset="http://web.gravatar.com/avatar/{{hash}} 2x" alt="Description"/>
  * ```
  *
  * The correct way to write it:
  * ```html
- * <img ng-srcset="http://www.gravatar.com/avatar/{{hash}} 2x" alt="Description" />
+ * <img ng-srcset="http://web.gravatar.com/avatar/{{hash}} 2x" alt="Description" />
  * ```
  *
  * @element IMG
@@ -28414,7 +28414,7 @@ var htmlAnchorDirective = valueFn({
  *
  * @example
     <example>
-      <file name="index.html">
+      <file name="main.html">
         <label>Click me to toggle: <input type="checkbox" ng-model="checked"></label><br/>
         <button ng-model="button" ng-disabled="checked">Button</button>
       </file>
@@ -28456,7 +28456,7 @@ var htmlAnchorDirective = valueFn({
  * a permanent reliable place to store the binding information.
  * @example
     <example>
-      <file name="index.html">
+      <file name="main.html">
         <label>Check me to check both: <input type="checkbox" ng-model="master"></label><br/>
         <input id="checkSlave" type="checkbox" ng-checked="master" aria-label="Slave input">
       </file>
@@ -28491,7 +28491,7 @@ var htmlAnchorDirective = valueFn({
  * a permanent reliable place to store the binding information.
  * @example
     <example>
-      <file name="index.html">
+      <file name="main.html">
         <label>Check me to make text readonly: <input type="checkbox" ng-model="checked"></label><br/>
         <input type="text" ng-readonly="checked" value="I'm Angular" aria-label="Readonly field" />
       </file>
@@ -28527,7 +28527,7 @@ var htmlAnchorDirective = valueFn({
  *
  * @example
     <example>
-      <file name="index.html">
+      <file name="main.html">
         <label>Check me to select: <input type="checkbox" ng-model="selected"></label><br/>
         <select aria-label="ngSelected demo">
           <option>Hello!</option>
@@ -28564,7 +28564,7 @@ var htmlAnchorDirective = valueFn({
  * a permanent reliable place to store the binding information.
  * @example
      <example>
-       <file name="index.html">
+       <file name="main.html">
          <label>Check me check multiple: <input type="checkbox" ng-model="open"></label><br/>
          <details id="details" ng-open="open">
             <summary>Show/Hide me</summary>
@@ -29075,7 +29075,7 @@ function FormController(element, attrs, $scope, $animate, $interpolate) {
  *
  * @example
     <example deps="angular-animate.js" animations="true" fixBase="true" module="formExample">
-      <file name="index.html">
+      <file name="main.html">
        <script>
          angular.module('formExample', [])
            .controller('FormController', ['$scope', function($scope) {
@@ -29261,7 +29261,7 @@ var inputType = {
    *
    * @example
       <example name="text-input-directive" module="textInputExample">
-        <file name="index.html">
+        <file name="main.html">
          <script>
            angular.module('textInputExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -29350,7 +29350,7 @@ var inputType = {
      *
      * @example
      <example name="date-input-directive" module="dateInputExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
           angular.module('dateInputExample', [])
             .controller('DateController', ['$scope', function($scope) {
@@ -29445,7 +29445,7 @@ var inputType = {
     *
     * @example
     <example name="datetimelocal-input-directive" module="dateExample">
-    <file name="index.html">
+    <file name="main.html">
       <script>
         angular.module('dateExample', [])
           .controller('DateController', ['$scope', function($scope) {
@@ -29541,7 +29541,7 @@ var inputType = {
    *
    * @example
    <example name="time-input-directive" module="timeExample">
-   <file name="index.html">
+   <file name="main.html">
      <script>
       angular.module('timeExample', [])
         .controller('DateController', ['$scope', function($scope) {
@@ -29636,7 +29636,7 @@ var inputType = {
     *
     * @example
     <example name="week-input-directive" module="weekExample">
-    <file name="index.html">
+    <file name="main.html">
       <script>
       angular.module('weekExample', [])
         .controller('DateController', ['$scope', function($scope) {
@@ -29733,7 +29733,7 @@ var inputType = {
    *
    * @example
    <example name="month-input-directive" module="monthExample">
-   <file name="index.html">
+   <file name="main.html">
      <script>
       angular.module('monthExample', [])
         .controller('DateController', ['$scope', function($scope) {
@@ -29852,7 +29852,7 @@ var inputType = {
    *
    * @example
       <example name="number-input-directive" module="numberExample">
-        <file name="index.html">
+        <file name="main.html">
          <script>
            angular.module('numberExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -29950,7 +29950,7 @@ var inputType = {
    *
    * @example
       <example name="url-input-directive" module="urlExample">
-        <file name="index.html">
+        <file name="main.html">
          <script>
            angular.module('urlExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -30049,7 +30049,7 @@ var inputType = {
    *
    * @example
       <example name="email-input-directive" module="emailExample">
-        <file name="index.html">
+        <file name="main.html">
          <script>
            angular.module('emailExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -30125,7 +30125,7 @@ var inputType = {
    *
    * @example
       <example name="radio-input-directive" module="radioExample">
-        <file name="index.html">
+        <file name="main.html">
          <script>
            angular.module('radioExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -30187,7 +30187,7 @@ var inputType = {
    *
    * @example
       <example name="checkbox-input-directive" module="checkboxExample">
-        <file name="index.html">
+        <file name="main.html">
          <script>
            angular.module('checkboxExample', [])
              .controller('ExampleController', ['$scope', function($scope) {
@@ -30494,7 +30494,7 @@ function badInputChecker(scope, element, attr, ctrl) {
       var validity = element.prop(VALIDITY_STATE_PROPERTY) || {};
       // Detect bug in FF35 for input[email] (https://bugzilla.mozilla.org/show_bug.cgi?id=1064430):
       // - also sets validity.badInput (should only be validity.typeMismatch).
-      // - see http://www.whatwg.org/specs/web-apps/current-work/multipage/forms.html#e-mail-state-(type=email)
+      // - see http://web.whatwg.org/specs/web-apps/current-work/multipage/forms.html#e-mail-state-(type=email)
       // - can ignore this case as we can still read out the erroneous email...
       return validity.badInput && !validity.typeMismatch ? undefined : value;
     });
@@ -30724,7 +30724,7 @@ function checkboxInputType(scope, element, attr, ctrl, $sniffer, $browser, $filt
  *
  * @example
     <example name="input-directive" module="inputExample">
-      <file name="index.html">
+      <file name="main.html">
        <script>
           angular.module('inputExample', [])
             .controller('ExampleController', ['$scope', function($scope) {
@@ -30862,7 +30862,7 @@ var CONSTANT_VALUE_REGEXP = /^(true|false|\d+)$/;
  *
  * @example
     <example name="ngValue-directive" module="valueExample">
-      <file name="index.html">
+      <file name="main.html">
        <script>
           angular.module('valueExample', [])
             .controller('ExampleController', ['$scope', function($scope) {
@@ -30943,7 +30943,7 @@ var ngValueDirective = function() {
  * @example
  * Enter a name in the Live Preview text box; the greeting below the text box changes instantly.
    <example module="bindExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('bindExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -31003,7 +31003,7 @@ var ngBindDirective = ['$compile', function($compile) {
  * @example
  * Try it here: enter text in text box and watch the greeting change.
    <example module="bindExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('bindExample', [])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -31076,7 +31076,7 @@ var ngBindTemplateDirective = ['$interpolate', '$compile', function($interpolate
  * @example
 
    <example module="bindHtmlExample" deps="angular-sanitize.js">
-     <file name="index.html">
+     <file name="main.html">
        <div ng-controller="ExampleController">
         <p ng-bind-html="myHTML"></p>
        </div>
@@ -31149,7 +31149,7 @@ var ngBindHtmlDirective = ['$sce', '$parse', '$compile', function($sce, $parse, 
  *
  * @example
  * <example name="ngChange-directive" module="changeExample">
- *   <file name="index.html">
+ *   <file name="main.html">
  *     <script>
  *       angular.module('changeExample', [])
  *         .controller('ExampleController', ['$scope', function($scope) {
@@ -31360,7 +31360,7 @@ function classDirective(name, selector) {
  *
  * @example Example that demonstrates basic bindings via ngClass directive.
    <example>
-     <file name="index.html">
+     <file name="main.html">
        <p ng-class="{strike: deleted, bold: important, 'has-error': error}">Map Syntax Example</p>
        <label>
           <input type="checkbox" ng-model="deleted">
@@ -31453,7 +31453,7 @@ function classDirective(name, selector) {
    The example below demonstrates how to perform animations using ngClass.
 
    <example module="ngAnimate" deps="angular-animate.js" animations="true">
-     <file name="index.html">
+     <file name="main.html">
       <input id="setbtn" type="button" value="set" ng-click="myVar='my-class'">
       <input id="clearbtn" type="button" value="clear" ng-click="myVar=''">
       <br>
@@ -31517,7 +31517,7 @@ var ngClassDirective = classDirective('', true);
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
         <ol ng-init="names=['John', 'Mary', 'Cate', 'Suz']">
           <li ng-repeat="name in names">
            <span ng-class-odd="'odd'" ng-class-even="'even'">
@@ -31565,7 +31565,7 @@ var ngClassOddDirective = classDirective('Odd', 0);
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
         <ol ng-init="names=['John', 'Mary', 'Cate', 'Suz']">
           <li ng-repeat="name in names">
            <span ng-class-odd="'odd'" ng-class-even="'even'">
@@ -31631,7 +31631,7 @@ var ngClassEvenDirective = classDirective('Even', 1);
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
         <div id="template1" ng-cloak>{{ 'hello' }}</div>
         <div id="template2" class="ng-cloak">{{ 'world' }}</div>
      </file>
@@ -31715,7 +31715,7 @@ var ngCloakDirective = ngDirective({
  * This example demonstrates the `controller as` syntax.
  *
  * <example name="ngControllerAs" module="controllerAsExample">
- *   <file name="index.html">
+ *   <file name="main.html">
  *    <div id="ctrl-as-exmpl" ng-controller="SettingsController1 as settings">
  *      <label>Name: <input type="text" ng-model="settings.name"/></label>
  *      <button ng-click="settings.greet()">greet</button><br/>
@@ -31798,7 +31798,7 @@ var ngCloakDirective = ngDirective({
  * This example demonstrates the "attach to `$scope`" style of controller.
  *
  * <example name="ngController" module="controllerExample">
- *  <file name="index.html">
+ *  <file name="main.html">
  *   <div id="ctrl-exmpl" ng-controller="SettingsController2">
  *     <label>Name: <input type="text" ng-model="name"/></label>
  *     <button ng-click="greet()">greet</button><br/>
@@ -31941,7 +31941,7 @@ var ngControllerDirective = [function() {
       // Note: the suffix `.csp` in the example name triggers
       // csp mode in our http server!
       <example name="example.csp" module="cspExample" ng-csp="true">
-        <file name="index.html">
+        <file name="main.html">
           <div ng-controller="MainController as ctrl">
             <div>
               <button ng-click="ctrl.inc()" id="inc">Increment</button>
@@ -32076,7 +32076,7 @@ var ngControllerDirective = [function() {
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <button ng-click="count = count + 1" ng-init="count=0">
         Increment
       </button>
@@ -32151,7 +32151,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <button ng-dblclick="count = count + 1" ng-init="count=0">
         Increment (on double click)
       </button>
@@ -32175,7 +32175,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <button ng-mousedown="count = count + 1" ng-init="count=0">
         Increment (on mouse down)
       </button>
@@ -32199,7 +32199,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <button ng-mouseup="count = count + 1" ng-init="count=0">
         Increment (on mouse up)
       </button>
@@ -32222,7 +32222,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <button ng-mouseover="count = count + 1" ng-init="count=0">
         Increment (when mouse is over)
       </button>
@@ -32246,7 +32246,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <button ng-mouseenter="count = count + 1" ng-init="count=0">
         Increment (when mouse enters)
       </button>
@@ -32270,7 +32270,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <button ng-mouseleave="count = count + 1" ng-init="count=0">
         Increment (when mouse leaves)
       </button>
@@ -32294,7 +32294,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <button ng-mousemove="count = count + 1" ng-init="count=0">
         Increment (when mouse moves)
       </button>
@@ -32318,7 +32318,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <input ng-keydown="count = count + 1" ng-init="count=0">
       key down count: {{count}}
      </file>
@@ -32340,7 +32340,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
        <p>Typing in the input box below updates the key count</p>
        <input ng-keyup="count = count + 1" ng-init="count=0"> key up count: {{count}}
 
@@ -32367,7 +32367,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <input ng-keypress="count = count + 1" ng-init="count=0">
       key press count: {{count}}
      </file>
@@ -32400,7 +32400,7 @@ forEach(
  *
  * @example
    <example module="submitExample">
-     <file name="index.html">
+     <file name="main.html">
       <script>
         angular.module('submitExample', [])
           .controller('ExampleController', ['$scope', function($scope) {
@@ -32496,7 +32496,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <input ng-copy="copied=true" ng-init="copied=false; value='copy me'" ng-model="value">
       copied: {{copied}}
      </file>
@@ -32517,7 +32517,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <input ng-cut="cut=true" ng-init="cut=false; value='cut me'" ng-model="value">
       cut: {{cut}}
      </file>
@@ -32538,7 +32538,7 @@ forEach(
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
       <input ng-paste="paste=true" ng-init="paste=false" placeholder='paste here'>
       pasted: {{paste}}
      </file>
@@ -32591,7 +32591,7 @@ forEach(
  *
  * @example
   <example module="ngAnimate" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="main.html">
       <label>Click me: <input type="checkbox" ng-model="checked" ng-init="checked=true" /></label><br/>
       Show when checked:
       <span ng-if="checked" class="animate-if">
@@ -32687,7 +32687,7 @@ var ngIfDirective = ['$animate', function($animate) {
  *
  * In addition, the browser's
  * [Same Origin Policy](https://code.google.com/p/browsersec/wiki/Part2#Same-origin_policy_for_XMLHttpRequest)
- * and [Cross-Origin Resource Sharing (CORS)](http://www.w3.org/TR/cors/)
+ * and [Cross-Origin Resource Sharing (CORS)](http://web.w3.org/TR/cors/)
  * policy may further restrict whether the template is successfully loaded.
  * For example, `ngInclude` won't work for cross-domain requests on all browsers and for `file://`
  * access on some browsers.
@@ -32714,7 +32714,7 @@ var ngIfDirective = ['$animate', function($animate) {
  *
  * @example
   <example module="includeExample" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="main.html">
      <div ng-controller="ExampleController">
        <select ng-model="template" ng-options="t.name for t in templates">
         <option value="">(blank)</option>
@@ -32994,7 +32994,7 @@ var ngIncludeFillContentDirective = ['$compile',
  *
  * @example
    <example module="initExample">
-     <file name="index.html">
+     <file name="main.html">
    <script>
      angular.module('initExample', [])
        .controller('ExampleController', ['$scope', function($scope) {
@@ -33058,7 +33058,7 @@ var ngInitDirective = ngDirective({
  *          $scope.names = ['morpheus', 'neo', 'trinity'];
  *        }]);
  *   </file>
- *   <file name="index.html">
+ *   <file name="main.html">
  *    <form name="myForm" ng-controller="ExampleController">
  *      <label>List: <input name="namesInput" ng-model="names" ng-list required></label>
  *      <span role="alert">
@@ -33098,7 +33098,7 @@ var ngInitDirective = ngDirective({
  *
  * ### Example - splitting on whitespace
  * <example name="ngList-directive-newlines">
- *   <file name="index.html">
+ *   <file name="main.html">
  *    <textarea ng-model="list" ng-list="&#10;" ng-trim="false"></textarea>
  *    <pre>{{ list | json }}</pre>
  *   </file>
@@ -33343,7 +33343,7 @@ is set to `true`. The parse error is stored in `ngModel.$error.parse`.
           };
         }]);
     </file>
-    <file name="index.html">
+    <file name="main.html">
       <form name="myForm">
        <div contenteditable
             name="myWidget" ng-model="userContent"
@@ -33625,7 +33625,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
    *       };
    *     }]);
    *   </file>
-   *   <file name="index.html">
+   *   <file name="main.html">
    *     <div ng-controller="CancelUpdateController">
    *       <p>Try typing something in each input.  See that the model only updates when you
    *          blur off the input.
@@ -34086,7 +34086,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
  *
  * @example
  * <example deps="angular-animate.js" animations="true" fixBase="true" module="inputExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
         angular.module('inputExample', [])
           .controller('ExampleController', ['$scope', function($scope) {
@@ -34137,7 +34137,7 @@ var NgModelController = ['$scope', '$exceptionHandler', '$attrs', '$element', '$
  *
  * @example
  * <example name="ngModel-getter-setter" module="getterSetterExample">
-     <file name="index.html">
+     <file name="main.html">
        <div ng-controller="ExampleController">
          <form name="userForm">
            <label>Name:
@@ -34274,7 +34274,7 @@ var DEFAULT_REGEXP = /(\s+|^)default(\s+|$)/;
   pressed while the input field is focused, the value is reset to the value in the current model.
 
   <example name="ngModelOptions-directive-blur" module="optionsExample">
-    <file name="index.html">
+    <file name="main.html">
       <div ng-controller="ExampleController">
         <form name="userForm">
           <label>Name:
@@ -34330,7 +34330,7 @@ var DEFAULT_REGEXP = /(\s+|^)default(\s+|$)/;
   If the `Clear` button is pressed, any debounced action is canceled and the value becomes empty.
 
   <example name="ngModelOptions-directive-debounce" module="optionsExample">
-    <file name="index.html">
+    <file name="main.html">
       <div ng-controller="ExampleController">
         <form name="userForm">
           <label>Name:
@@ -34355,7 +34355,7 @@ var DEFAULT_REGEXP = /(\s+|^)default(\s+|$)/;
   This one shows how to bind to getter/setters:
 
   <example name="ngModelOptions-directive-getter-setter" module="getterSetterExample">
-    <file name="index.html">
+    <file name="main.html">
       <div ng-controller="ExampleController">
         <form name="userForm">
           <label>Name:
@@ -34534,7 +34534,7 @@ function isObjectEmpty(obj) {
  *
  * @example
     <example>
-      <file name="index.html">
+      <file name="main.html">
         <div>Normal: {{1 + 2}}</div>
         <div ng-non-bindable>Ignored: {{1 + 2}}</div>
       </file>
@@ -34689,7 +34689,7 @@ var ngOptionsMinErr = minErr('ngOptions');
  *
  * @example
     <example module="selectExample">
-      <file name="index.html">
+      <file name="main.html">
         <script>
         angular.module('selectExample', [])
           .controller('ExampleController', ['$scope', function($scope) {
@@ -35367,7 +35367,7 @@ var ngOptionsDirective = ['$compile', '$parse', function($compile, $parse) {
  *
  * @example
     <example module="pluralizeExample">
-      <file name="index.html">
+      <file name="main.html">
         <script>
           angular.module('pluralizeExample', [])
             .controller('ExampleController', ['$scope', function($scope) {
@@ -35726,7 +35726,7 @@ var ngPluralizeDirective = ['$locale', '$interpolate', '$log', function($locale,
  * This example initializes the scope to a list of names and
  * then uses `ngRepeat` to display every person:
   <example module="ngAnimate" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="main.html">
       <div ng-init="friends = [
         {name:'John', age:25, gender:'boy'},
         {name:'Jessie', age:30, gender:'girl'},
@@ -36139,7 +36139,7 @@ var NG_HIDE_IN_PROGRESS_CLASS = 'ng-hide-animate';
  *
  * @example
   <example module="ngAnimate" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="main.html">
       Click me: <input type="checkbox" ng-model="checked" aria-label="Toggle ngHide"><br/>
       <div>
         Show:
@@ -36305,7 +36305,7 @@ var ngShowDirective = ['$animate', function($animate) {
  *
  * @example
   <example module="ngAnimate" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="main.html">
       Click me: <input type="checkbox" ng-model="checked" aria-label="Toggle ngShow"><br/>
       <div>
         Show:
@@ -36398,7 +36398,7 @@ var ngHideDirective = ['$animate', function($animate) {
  *
  * @example
    <example>
-     <file name="index.html">
+     <file name="main.html">
         <input type="button" value="set color" ng-click="myStyle={color:'red'}">
         <input type="button" value="set background" ng-click="myStyle={'background-color':'blue'}">
         <input type="button" value="clear" ng-click="myStyle={}">
@@ -36489,7 +36489,7 @@ var ngStyleDirective = ngDirective(function(scope, element, attr) {
  *
  * @example
   <example module="switchExample" deps="angular-animate.js" animations="true">
-    <file name="index.html">
+    <file name="main.html">
       <div ng-controller="ExampleController">
         <select ng-model="selection" ng-options="item for item in items">
         </select>
@@ -36651,7 +36651,7 @@ var ngSwitchDefaultDirective = ngDirective({
  *
  * @example
    <example module="transcludeExample">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('transcludeExample', [])
           .directive('pane', function(){
@@ -36726,7 +36726,7 @@ var ngTranscludeDirective = ngDirective({
  *
  * @example
   <example>
-    <file name="index.html">
+    <file name="main.html">
       <script type="text/ng-template" id="/tpl.html">
         Content of the template.
       </script>
@@ -36892,7 +36892,7 @@ var SelectController =
  * ### Example (binding `select` to a non-string value)
  *
  * <example name="select-with-non-string-options" module="nonStringSelect">
- *   <file name="index.html">
+ *   <file name="main.html">
  *     <select ng-model="model.id" convert-to-number>
  *       <option value="0">Zero</option>
  *       <option value="1">One</option>
@@ -40586,7 +40586,7 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
  * Say for example we have the following template code:
  *
  * ```html
- * <!-- index.html -->
+ * <!-- main.html -->
  * <div ng-view class="view-animation">
  * </div>
  *
@@ -40678,7 +40678,7 @@ var $$AnimationProvider = ['$animateProvider', function($animateProvider) {
            id="anchoringExample"
            deps="angular-animate.js;angular-route.js"
            animations="true">
-    <file name="index.html">
+    <file name="main.html">
       <a href="#/">Home</a>
       <hr />
       <div class="view-container">
@@ -40996,7 +40996,7 @@ var $sanitizeMinErr = angular.$$minErr('$sanitize');
  *
  * @example
    <example module="sanitizeExample" deps="angular-sanitize.js">
-   <file name="index.html">
+   <file name="main.html">
      <script>
          angular.module('sanitizeExample', ['ngSanitize'])
            .controller('ExampleController', ['$scope', '$sce', function($scope, $sce) {
@@ -41476,7 +41476,7 @@ angular.module('ngSanitize', []).provider('$sanitize', $SanitizeProvider);
  *
  * @example
    <example module="linkyExample" deps="angular-sanitize.js">
-     <file name="index.html">
+     <file name="main.html">
        <script>
          angular.module('linkyExample', ['ngSanitize'])
            .controller('ExampleController', ['$scope', function($scope) {
@@ -41571,7 +41571,7 @@ angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
     while ((match = raw.match(LINKY_URL_REGEXP))) {
       // We can not end in these as they are sometimes found at the end of the sentence
       url = match[0];
-      // if we did not match ftp/http/www/mailto then assume mailto
+      // if we did not match ftp/http/web/mailto then assume mailto
       if (!match[2] && !match[4]) {
         url = (match[3] ? 'http://' : 'mailto:') + url;
       }
@@ -41620,7 +41620,7 @@ angular.module('ngSanitize').filter('linky', ['$sanitize', function($sanitize) {
  * State-based routing for AngularJS
  * @version v0.2.13
  * @link http://angular-ui.github.com/
- * @license MIT License, http://www.opensource.org/licenses/MIT
+ * @license MIT License, http://web.opensource.org/licenses/MIT
  */
 
 /* commonjs package manager support (eg componentjs) */
@@ -43702,7 +43702,7 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
        * @param {object=} params An object of parameter values to fill the matcher's required parameters.
        * @param {object=} options Options object. The options are:
        *
-       * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://www.example.com/fullurl".
+       * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://web.example.com/fullurl".
        *
        * @returns {string} Returns the fully compiled URL, or `null` if `params` fail validation against `urlMatcher`
        */
@@ -45005,7 +45005,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      * - **`inherit`** - {boolean=true}, If `true` will inherit url parameters from current url.
      * - **`relative`** - {object=$state.$current}, When transitioning with relative path (e.g '^'), 
      *    defines which state to be relative from.
-     * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://www.example.com/fullurl".
+     * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://web.example.com/fullurl".
      * 
      * @returns {string} compiled state url
      */
@@ -57420,7 +57420,7 @@ IonicModule
  * more info. Below is a great video by the AngularUI Router team that may help to explain
  * how it all works:
  *
- * <iframe width="560" height="315" src="//www.youtube.com/embed/dqJRoh8MnBo"
+ * <iframe width="560" height="315" src="//web.youtube.com/embed/dqJRoh8MnBo"
  * frameborder="0" allowfullscreen></iframe>
  *
  * @param {string=} name A view name. The name should be unique amongst the other views in the
