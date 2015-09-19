@@ -35,8 +35,8 @@ module.exports = function(passport) {
     /**
      * Delete friend
      */
-    router.delete('/users/:username/friends', function(req, res, next) {
-        players.deleteFriend(req.params.username, req.body.friend, function(err) {
+    router.put('/users/:username/friends/:friend', function(req, res, next) {
+        players.deleteFriend(req.params.username, req.params.friend, function(err) {
             if (err) next(err);
             else res.send();
         });
